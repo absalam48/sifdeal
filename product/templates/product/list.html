@@ -1,0 +1,22 @@
+{% extends 'product/base.html' %}
+{% include 'product/base.html' %}
+{% load static %}
+{% block body %}
+
+    <div class="row justify-content-start">
+      {% if product_lsit %}
+      {% for product in product_lsit %}
+      <div class="col-sm-3 text-center">
+        <img class="img-fluid img-thumbnail imglist" src="{{ product.image.url }}">
+        <h5>{{ product.title }}</h5>
+        <p>{{product.price}}</p>
+          <h5><a href="{% url 'product:detail' product.id %}">Read More</a></h5>
+
+      </div>
+      {% endfor %}
+      {% else %}
+      not work
+      {% endif %}
+    </div>
+
+    {% endblock %}

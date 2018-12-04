@@ -1,0 +1,15 @@
+{% extends 'product/base.html' %}
+{% load staticfiles %}
+{% block body %}
+{% load crispy_forms_tags %}
+<div class="jumbotron">
+  <h1>Register here</h1>
+  <h3>Fill out form</h3>
+  <form enctype="multipart/form-data" method="POST" >
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" name="" value="Update">
+  </form>
+
+</div>
+{% endblock %}

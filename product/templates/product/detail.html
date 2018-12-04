@@ -1,0 +1,22 @@
+{% extends 'product/base.html' %}
+{% load staticfiles %}
+{% block body %}
+
+{% if product_detail %}
+<div class="block">
+      <div class="row">
+        <div class="span4">
+          <img class="img-thumbnail detailimg float-left" style="margin-right:10px" src="{{ product_detail.image.url }}"/>
+          <div class="content-heading"><h2>{{ product_detail.title }} </h2></div>
+          <p>Price:{{ product_detail.price }}</p>
+          <p>{{ product_detail.description }}</p>
+        </div>
+     </div>
+</div>
+
+
+{% else %}
+not work
+{% endif %}
+
+{% endblock %}
